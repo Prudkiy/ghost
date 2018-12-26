@@ -18,18 +18,20 @@ var config = {
         cssName: 'bundle.min.css',
         path: './public',
         pathCss: './public/styles'
-    }
+    },
+    isDevelop: true
 };
 
 gulp.task('scss', function() {
     return gulp.src(config.path.scss)
-        .pipe(sourcemaps.init())
+        .pipe(gulpIf(config.isDevelop, sourcemaps.init()))
         .pipe(sass())
         .pipe(concat(config.output.cssName))
         .pipe(autoprefixer())
-        .pipe(sourcemaps.write())
+        .pipe(gulpIf(!config.isDevelop, cleanCss()))
+        .pipe(gulpIf(config.isDevelop, sourcemaps.write()))
         .pipe(gulp.dest(config.output.pathCss))
-        .pipe(browserSync.stream());
+        .pipe(browserSync.stream())
 });
 
 gulp.task('serve', function() {

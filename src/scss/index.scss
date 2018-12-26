@@ -1,38 +1,10 @@
-@import "partials/config";
+@import "partials/params";
 @import "partials/mixins";
-@import "partials/media";
-@import "partials/fun";
 
-body {
-    background-color: $colorSite;
-    h1 {
-        @include pm0($margin: 0px auto);
-        color: red;
-        text-align: center;
-        display: flex;
-        align-items: center;
-        align-self: center;
-        font-size: $mine-size;
+$colorRed: red;
 
-    }
+h1 {
+    color: $colorRed
 }
-#wraper {
-    display: flex;
-    @include mobile {
-        flex-direction: column;
-    }
-    &>div {
-        width: 50%;
-        box-sizing: border-box;
-        @include mobile {
-            width: 100%;;
-        }
-    }
-    .block1 {
-        outline: 1px solid red;
-        @extend h1;
-    }
-    .block2 {
-        outline: 1px solid green;
-    }
-}
+
+
