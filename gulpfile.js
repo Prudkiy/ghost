@@ -6,6 +6,7 @@ var gulp         = require('gulp'),
     sass         = require('gulp-sass'),
     sourcemaps   = require('gulp-sourcemaps'),
     gulpIf       = require('gulp-if'),
+    cleanCss     = require('gulp-clean-css'),
     browserSync  = require('browser-sync').create();
 
 var config = {
