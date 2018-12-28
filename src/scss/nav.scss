@@ -12,6 +12,9 @@
         height: $heightNav;
         align-items: center;
         padding: 0 20px;
+        @include mobile {
+            
+        }
         .logo {
             div {
                 width: 133px;
@@ -23,14 +26,30 @@
         }
         ul {
             display: flex;
+            @include mobile {
+                flex-direction: column;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                background-color: $colorBgBlackHeadline;
+                padding: 10px 0;
+                display: none;
+            }
             li {
                 display: flex;
                 align-items: center;
                 margin-left: 58px;
+                @include mobile {
+                    margin: 25px 30px;
+                }
                 
                 a {
                     color: #ffffff;
                     height: $heightNav;
+                    @include mobile {
+                        height: auto;
+                    }
                     display: flex;
                     align-items: center;
                     box-sizing: border-box;
@@ -42,11 +61,24 @@
                 }
             }
         }
+        #nav__menu_mob {
+            width: 30px;
+            height: 30px;
+            background-image: url('../img/icon-menu.png');
+            cursor: pointer;
+            position: absolute;
+            z-index: 100;
+            right: 30px;
+            display: none;
+            @include mobile {
+                display: block;
+            }
+        }
     }
 }
 .bgHead {
     background-color: #565454;
-    background-image: url('../img/bg-header.png');
+    background-image: url('../img/bg-header.jpg');
     background-blend-mode: multiply;
 }
 .headerFooter {
@@ -59,6 +91,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    @include mobile {
+        flex-direction: column;
+    }
     a {
         color: #fff;
         &:hover {
@@ -67,6 +102,9 @@
     }
     .blockHeaderFooter:first-child {
         margin-right: 330px;
+        @include mobile {
+            margin: 0 0 10px 0;
+        }
     }
 }
 .headerTextBig {
