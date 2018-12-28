@@ -1,10 +1,52 @@
 @import "partials/params";
 @import "partials/mixins";
+@import "partials/media";
+@import url('https://fonts.googleapis.com/css?family=PT+Sans:400,700');
 
-$colorRed: red;
-
-h1 {
-    color: $colorRed
+html, body {
+    @include clear;
+    font-family: 'PT Sans', sans-serif;
+    width: 100%
 }
+
+h1, h2, h3, h4, h5, h6, p, a, ul, li, nav {
+    @include clear;
+}
+
+li {
+    list-style: none;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+}
+
+input {
+    outline: none;
+}
+
+.view-port {
+    margin: 0 auto;
+    max-width: $view-port;
+}
+
+.wrapper {
+    @include clear;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    overflow: hidden;
+
+}
+
+.activeViewBlock {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    height: 100vh;
+}
+
 
 

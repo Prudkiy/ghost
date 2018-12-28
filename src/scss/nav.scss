@@ -1,0 +1,86 @@
+@import "partials/params";
+@import "partials/mixins";
+@import "partials/media";
+
+.headerNav {
+    background-color: $colorBgBlackHeadlineRgba;
+    width: 100%;
+    position: absolute;
+    nav {
+        display: flex;
+        justify-content: space-between;
+        height: $heightNav;
+        align-items: center;
+        padding: 0 20px;
+        .logo {
+            div {
+                width: 133px;
+                height: 29px;
+                background-image: url('../img/logo-header.png');
+                background-position: 0 0;
+                background-size: 100% 100%;
+            }
+        }
+        ul {
+            display: flex;
+            li {
+                display: flex;
+                align-items: center;
+                margin-left: 58px;
+                
+                a {
+                    color: #ffffff;
+                    height: $heightNav;
+                    display: flex;
+                    align-items: center;
+                    box-sizing: border-box;
+                    border-bottom: 1px solid $colorBgBlackHeadlineRgba;
+                    transition: all 0.2s;
+                    &:hover {
+                        border-bottom: 1px solid #ffffff;
+                    }
+                }
+            }
+        }
+    }
+}
+.bgHead {
+    background-color: #565454;
+    background-image: url('../img/bg-header.png');
+    background-blend-mode: multiply;
+}
+.headerFooter {
+    width: 100%;
+    height: $heightNav;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: $colorBgBlackHeadlineRgba;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    a {
+        color: #fff;
+        &:hover {
+            opacity: .8;
+        }
+    }
+    .blockHeaderFooter:first-child {
+        margin-right: 330px;
+    }
+}
+.headerTextBig {
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 72px;
+    text-align: center;
+    padding-top: 30vh;
+    letter-spacing: 5px;
+}
+.headerTextSmall {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #ffffff;
+    font-size: 32px;
+    font-style: italic;
+    text-align: center
+}

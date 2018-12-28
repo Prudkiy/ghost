@@ -17,7 +17,7 @@ var config = {
     output: {
         cssName: 'bundle.min.css',
         path: './public',
-        pathCss: './public/styles'
+        pathCss: './public/css'
     },
     isDevelop: true
 };
