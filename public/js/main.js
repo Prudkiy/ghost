@@ -1,7 +1,10 @@
 'use strict';
 
-// navitgation button menu mobile
+
+
 $( document ).ready(function() {
+
+// navitgation button menu mobile
     let nav__menu_mobStatus = false;
     let ulNavHeader = $('nav ul');
     $('#nav__menu_mob').click(function(){
@@ -15,5 +18,21 @@ $( document ).ready(function() {
         }
     });
 
+// model window generation - input
+
+    function generationWindow (data) {
+        let htmlWindow = $('.modalWindow__content');
+        if (data === 'hideLoginForm') {
+            let content = $('#hideLoginForm');
+            $('.modalWindow__title').html(content.attr('name'));
+            htmlWindow.append(content.html());
+        }
+    }
+
+    generationWindow ('hideLoginForm');
+
+
 });
+
+
 

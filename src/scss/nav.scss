@@ -79,18 +79,39 @@
 .bgHead {
     background-color: #565454;
     background-image: url('../img/bg-header.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
     background-blend-mode: multiply;
 }
+h1 {
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 72px;
+    text-align: center;
+    padding-top: 30vh;
+    letter-spacing: 5px;
+    @include table {
+        font-size: 52px;
+    }
+}
+h2 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #ffffff;
+    font-size: 32px;
+    font-style: italic;
+    text-align: center;
+    @include table {
+        font-size: 22px;
+    }
+}
 .headerFooter {
+    @include flex-center;
     width: 100%;
     height: $heightNav;
     position: absolute;
     bottom: 0;
     left: 0;
     background-color: $colorBgBlackHeadlineRgba;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     @include mobile {
         flex-direction: column;
     }
@@ -100,25 +121,11 @@
             opacity: .8;
         }
     }
-    .blockHeaderFooter:first-child {
+    div:first-child {
         margin-right: 330px;
         @include mobile {
             margin: 0 0 10px 0;
         }
     }
 }
-.headerTextBig {
-    color: #ffffff;
-    font-weight: bold;
-    font-size: 72px;
-    text-align: center;
-    padding-top: 30vh;
-    letter-spacing: 5px;
-}
-.headerTextSmall {
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    color: #ffffff;
-    font-size: 32px;
-    font-style: italic;
-    text-align: center
-}
+

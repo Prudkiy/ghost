@@ -1,0 +1,54 @@
+@import "partials/params";
+@import "partials/mixins";
+@import "partials/media";
+
+.hideLoginForm {
+    &__inputWrap {
+        width: 70%;
+        box-sizing: border-box;
+        border: 1px solid $colorGrayFormText;
+        border-radius: 5px;
+        margin: 0 auto 15px;
+        input {
+            width: 96%;
+            border: none;
+            font-size: 16px;
+            color: $colorGrayFormText;
+            padding: 0;
+            margin: 0;
+        }
+        .textRemeber {
+            padding: 0 0 0 10px;
+            color: colorBgBlackHeadline;
+            font-size: 16px;
+        }
+    }
+    &__padding {
+        padding: 2%;
+        
+    }
+    &__notPadding {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 0;
+        border: none;
+        input {
+            width: auto;
+        }
+    }
+    &__button {
+        border: none;
+        border-radius: 5px;
+        background-color: $colorBgBlackHeadline;
+        cursor: pointer;
+        text-transform: uppercase;
+        color: #ffffff;
+        font-size: 18px;
+        padding: 7px 14px;
+        transition: all 0.1s;
+        &:hover {
+            opacity: .9;
+        }
+    }
+}

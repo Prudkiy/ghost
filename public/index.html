@@ -28,16 +28,38 @@
                             </ul>
                     </nav>
             </div>
-            <p class="headerTextBig">HELLO</p>
-            <p class="headerTextSmall">We love our work...</p>
-            <p class="headerTextSmall">And We're taking it seriously...</p>
+            <h1>HELLO</h1>
+            <h2>We love our work... <br/> And We're taking it seriously...</h2>
             <div class="headerFooter">
-                <div class="blockHeaderFooter"><a href="#">LOGIN</a></div>
-                <div class="blockHeaderFooter"><a href="#">REGISTER</a></div>
+                <div><a href="#">LOGIN</a></div>
+                <div><a href="#">REGISTER</a></div>
             </div>
         </div>
     </div>
 
+<div class="modalWindow">
+    <div class="modalWindow__block">
+        <div class="modalWindow__title">Title window</div>
+        <div class="modalWindow__content"></div>
+    </div>
+</div>
 
+<div class="hideBlock">
+    <!-- скрытый блок -->
+    <div id="hideLoginForm" class="hideBlock" name="Authorization form">
+        <div class="hideLoginForm__inputWrap hideLoginForm__padding">
+            <input type="text" placeholder="Name" name="nameUser">
+        </div> 
+        <div class="hideLoginForm__inputWrap hideLoginForm__padding">
+            <input type="password" placeholder="password" name="passwordUser">
+        </div>
+        <div class="hideLoginForm__inputWrap hideLoginForm__notPadding">
+            <input type="checkbox" name="saveUser"><p class="textRemeber">Remember</p>
+        </div>
+        <div class="hideLoginForm__inputWrap hideLoginForm__notPadding">
+        <button class="hideLoginForm__button">Come</button>
+        </div>
+    </div>
+</div>
 </body>
 </html>
