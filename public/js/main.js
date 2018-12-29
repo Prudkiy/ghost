@@ -27,10 +27,28 @@ $( document ).ready(function() {
             $('.modalWindow__title').html(content.attr('name'));
             htmlWindow.append(content.html());
         }
+        
     }
 
     generationWindow ('hideLoginForm');
 
+    let eyeStatus = false;
+    let eyeHtml = $('.hideLoginForm__eyeStatus');
+    let passwordUser = $('input[name=passwordUser]');
+    eyeHtml.click(function(){
+        if(!eyeStatus) {
+            eyeHtml.css('background-image', "url('../img/eye-true.png')");console.log('open');
+            passwordUser.attr('type', 'text');
+            eyeStatus = true;
+        }
+        else {
+            eyeHtml.css('background-image', "url('../img/eye-false.png')");
+            passwordUser.attr('type', 'password');
+            eyeStatus = false;
+        }
+    })
+
+    
 
 });
 
