@@ -33,20 +33,35 @@ $( document ).ready(function() {
     generationWindow ('hideLoginForm');
 
     let eyeStatus = false;
-    let eyeHtml = $('.hideLoginForm__eyeStatus');
+    let eyeHtml = $('#hideLoginForm__eyeStatus');
     let passwordUser = $('input[name=passwordUser]');
     eyeHtml.click(function(){
         if(!eyeStatus) {
-            eyeHtml.css('background-image', "url('../img/eye-true.png')");console.log('open');
+            eyeHtml.attr('class', 'hideLoginForm__eyeStatusTrue');
             passwordUser.attr('type', 'text');
             eyeStatus = true;
         }
         else {
-            eyeHtml.css('background-image', "url('../img/eye-false.png')");
+            eyeHtml.attr('class', 'hideLoginForm__eyeStatusFalse');
             passwordUser.attr('type', 'password');
             eyeStatus = false;
         }
     })
+
+    // checkbox
+
+    let rememberUser = $('#rememberUser');
+    let rememberUserImg = $('label[for=rememberUser] img');
+    
+
+    $('label[for=rememberUser] ').click(function(){
+         if(!rememberUser.prop('checked')){
+            rememberUserImg.css('display','block')
+         }
+         else {
+            rememberUserImg.css('display','none')
+        }
+    });
 
     
 

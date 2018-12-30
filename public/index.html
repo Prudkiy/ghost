@@ -7,8 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GHost</title>
     <link rel="stylesheet" href="css/bundle.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
     <script src="js/main.js"></script>
+    <script src="js/script.js"></script>
 </head>
 <body>
 
@@ -37,30 +38,39 @@
         </div>
     </div>
 
-<div class="modalWindow">
+    <div class="modalWindow">
     <div class="modalWindow__block">
         <div class="modalWindow__title">Title window</div>
         <div class="modalWindow__content"></div>
     </div>
 </div>
 
-<div class="hideBlock">
-    <!-- скрытый блок -->
+    <div class="hideBlock">
+  
     <div id="hideLoginForm" class="hideBlock" name="Authorization form">
+
         <div class="hideLoginForm__inputWrap hideLoginForm__padding">
             <input type="text" placeholder="Name" name="nameUser">
         </div> 
+
         <div class="hideLoginForm__inputWrap hideLoginForm__padding">
             <input type="password" placeholder="password" name="passwordUser">
-            <div class="hideLoginForm__eyeStatus"></div>    
+            <div id="hideLoginForm__eyeStatus" class="hideLoginForm__eyeStatusFalse"></div>    
         </div>
+
         <div class="hideLoginForm__inputWrap hideLoginForm__notPadding">
-            <input type="checkbox" name="saveUser"><p class="textRemeber">Remember</p>
+            <label class="hideLoginForm__rememberUser" for="rememberUser"><img src="img/bird.png" alt="bird"></label>
+            <input type="checkbox" class="hideLoginForm__rememberUser" id="rememberUser" name="saveUser">
+            <p class="textRemeber">Remember</p>
         </div>
+
         <div class="hideLoginForm__inputWrap hideLoginForm__notPadding">
         <button class="hideLoginForm__button">Come</button>
         </div>
+
     </div>
 </div>
+
+
 </body>
 </html>

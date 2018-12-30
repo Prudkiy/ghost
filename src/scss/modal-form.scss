@@ -1,7 +1,6 @@
 @import "partials/params";
 @import "partials/mixins";
 @import "partials/media";
-
 .hideLoginForm {
     &__inputWrap {
         width: 70%;
@@ -10,19 +9,47 @@
         border-radius: 5px;
         margin: 0 auto 15px;
         position: relative;
-        input {
+        input[type=text], input[type=password] {
             width: 96%;
             border: none;
             font-size: 16px;
-            color: $colorGrayFormText;
+            color: $colorBgBlackHeadline;
             padding: 0;
             margin: 0;
+        }
+        label[for=rememberUser] {
+            background-color: #ffffff;
+            z-index: 10;
+            cursor: pointer;
+            box-sizing: border-box;
+            border: 1px solid $colorGrayFormText;
+            border-radius: 5px;
+            img {
+                width: 20px;
+                height: 20px;
+                position: relative;
+                top: -5px;
+                left: 2px;
+                display: none;
+            }
         }
         .textRemeber {
             padding: 0 0 0 10px;
             color: colorBgBlackHeadline;
             font-size: 16px;
+            margin-left: 15px;
         }
+        #rememberUser {
+            z-index: 1;
+        }
+        
+    }
+    &__rememberUser {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        top: 0;
+        left: 0;
     }
     &__padding {
         padding: 8px 12px;
@@ -48,15 +75,23 @@
         font-size: 18px;
         padding: 7px 14px;
         transition: all 0.1s;
+        margin-top: 20px;
         &:hover {
             opacity: .9;
         }
     }
-    &__eyeStatus {
-        width: 33px;
+    &__eyeStatusFalse {
+        background-image: url('../img/eye-false.png');
+    }
+    &__eyeStatusTrue {
+        background-image: url('../img/eye-true.png');
+    }
+
+}
+#hideLoginForm__eyeStatus {
+    width: 33px;
         height: 33px;
         background-color: #ffffff;
-        background-image: url('../img/eye-false.png');
         background-repeat: no-repeat;
         background-size: 100% 100%;
         position: absolute;
@@ -67,5 +102,4 @@
         &:hover {
             opacity: .9;
         }
-    }
 }
