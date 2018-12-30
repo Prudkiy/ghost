@@ -69,6 +69,7 @@ input, button {
         background-color: #fff;
         border-radius: 5px;
         box-shadow: 0 0 10px #000000;
+        position: relative;
     }
     &__title {
         color: #444444;
@@ -81,5 +82,18 @@ input, button {
     &__content {
         width: 95%;
         margin: 0 auto;
+    }
+    &__close {
+        width: 30px;
+        height: 30px;
+        background: url('../img/closed.png'), $colorBgBlackHeadline;
+        background-position: center center;
+        background-size: 20px;
+        background-repeat: no-repeat;
+        border-bottom-left-radius: 5px;
+        cursor: pointer;
+        position: absolute;
+        top: 0;
+        right: 0;
     }
 }

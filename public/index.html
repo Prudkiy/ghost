@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="css/bundle.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
     <script src="js/main.js"></script>
-    <script src="js/script.js"></script>
 </head>
 <body>
 
@@ -40,6 +39,7 @@
 
     <div class="modalWindow">
     <div class="modalWindow__block">
+        <div class="modalWindow__close"></div>
         <div class="modalWindow__title">Title window</div>
         <div class="modalWindow__content"></div>
     </div>
@@ -50,12 +50,18 @@
     <div id="hideLoginForm" class="hideBlock" name="Authorization form">
 
         <div class="hideLoginForm__inputWrap hideLoginForm__padding">
-            <input type="text" placeholder="Name" name="nameUser">
+            <input type="text" id="hideLoginForm__nameUser" placeholder="Name" name="nameUser">
+            <div class="hideLoginForm__blockInfoError">
+                <p>invalid field</p>
+            </div>
         </div> 
 
         <div class="hideLoginForm__inputWrap hideLoginForm__padding">
-            <input type="password" placeholder="password" name="passwordUser">
-            <div id="hideLoginForm__eyeStatus" class="hideLoginForm__eyeStatusFalse"></div>    
+            <input type="password" id="hideLoginForm__passwordUser" placeholder="password" name="passwordUser">
+            <div id="hideLoginForm__eyeStatus" class="hideLoginForm__eyeStatusFalse"></div>
+            <div class="hideLoginForm__blockInfoError">
+                    <p>invalid field</p>
+            </div>
         </div>
 
         <div class="hideLoginForm__inputWrap hideLoginForm__notPadding">
