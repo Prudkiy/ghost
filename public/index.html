@@ -31,51 +31,87 @@
             <h1>HELLO</h1>
             <h2>We love our work... <br/> And We're taking it seriously...</h2>
             <div class="headerFooter">
-                <div><a href="#">LOGIN</a></div>
-                <div><a href="#">REGISTER</a></div>
+                <div id="formLoginButton"><p>LOGIN</p></div>
+                <div><p>REGISTER</p></div>
             </div>
         </div>
     </div>
 
-    <div class="modalWindow">
+    <div class="modalWindow" id="loginForm">
     <div class="modalWindow__block">
         <div class="modalWindow__close"></div>
         <div class="modalWindow__title">Title window</div>
-        <div class="modalWindow__content"></div>
+        <div class="modalWindow__content">
+                <div id="hideLoginForm" name="Authorization form">
+
+                        <div class="hideLoginForm__inputWrap hideLoginForm__padding">
+                            <input type="text" id="hideLoginForm__nameUser" placeholder="Name" name="nameUser">
+                            <div class="hideLoginForm__blockInfoError hideLoginForm__nameUser">
+                                <p>invalid field</p>
+                            </div>
+                        </div> 
+                
+                        <div class="hideLoginForm__inputWrap hideLoginForm__padding">
+                            <input type="password" id="hideLoginForm__passwordUser" placeholder="password" name="passwordUser">
+                            <div id="hideLoginForm__eyeStatus" class="hideLoginForm__eyeStatusFalse"></div>
+                            <div class="hideLoginForm__blockInfoError hideLoginForm__passwordUser">
+                                    <p>invalid field</p>
+                            </div>
+                        </div>
+                
+                        <div class="hideLoginForm__inputWrap hideLoginForm__notPadding">
+                            <label class="hideLoginForm__rememberUser" for="rememberUser"><img src="img/bird.png" alt="bird"></label>
+                            <input type="checkbox" class="hideLoginForm__rememberUser" id="rememberUser" name="saveUser">
+                            <p class="textRemeber">Remember</p>
+                        </div>
+                
+                        <div class="hideLoginForm__inputWrap hideLoginForm__notPadding">
+                        <button type="button" id="hideLoginForm__button" class="hideLoginForm__button">Come</button>
+                        </div>
+                
+                </div>
+
+        </div>
     </div>
 </div>
 
-    <div class="hideBlock">
-  
-    <div id="hideLoginForm" class="hideBlock" name="Authorization form">
-
-        <div class="hideLoginForm__inputWrap hideLoginForm__padding">
-            <input type="text" id="hideLoginForm__nameUser" placeholder="Name" name="nameUser">
-            <div class="hideLoginForm__blockInfoError hideLoginForm__nameUser">
-                <p>invalid field</p>
+<div class="modalWindow" id="registerForm">
+        <div class="modalWindow__block">
+            <div class="modalWindow__close"></div>
+            <div class="modalWindow__title">Registration form</div>
+            <div class="modalWindow__content">
+                    <div id="hideLoginForm" name="Authorization form">
+    
+                            <div class="hideLoginForm__inputWrap hideLoginForm__padding">
+                                <input type="text" id="" placeholder="Name" name="nameUser">
+                                <div class="hideLoginForm__blockInfoError">
+                                    <p>invalid field</p>
+                                </div>
+                            </div> 
+                    
+                            <div class="hideLoginForm__inputWrap hideLoginForm__padding">
+                                <input type="password" id="" placeholder="password" name="passwordUser">
+                                <div id="hideLoginForm__eyeStatus" class="hideLoginForm__eyeStatusFalse"></div>
+                                <div class="hideLoginForm__blockInfoError">
+                                        <p>invalid field</p>
+                                </div>
+                            </div>
+                    
+                            <div class="hideLoginForm__inputWrap hideLoginForm__notPadding">
+                                <label class="hideLoginForm__rememberUser" for=""><img src="img/bird.png" alt="bird"></label>
+                                <input type="checkbox" class="hideLoginForm__rememberUser" id="" name="saveUser">
+                                <p class="textRemeber">Remember</p>
+                            </div>
+                    
+                            <div class="hideLoginForm__inputWrap hideLoginForm__notPadding">
+                            <button type="button" id="" class="hideLoginForm__button">Come</button>
+                            </div>
+                    
+                    </div>
+    
             </div>
-        </div> 
-
-        <div class="hideLoginForm__inputWrap hideLoginForm__padding">
-            <input type="password" id="hideLoginForm__passwordUser" placeholder="password" name="passwordUser">
-            <div id="hideLoginForm__eyeStatus" class="hideLoginForm__eyeStatusFalse"></div>
-            <div class="hideLoginForm__blockInfoError hideLoginForm__passwordUser">
-                    <p>invalid field</p>
-            </div>
         </div>
-
-        <div class="hideLoginForm__inputWrap hideLoginForm__notPadding">
-            <label class="hideLoginForm__rememberUser" for="rememberUser"><img src="img/bird.png" alt="bird"></label>
-            <input type="checkbox" class="hideLoginForm__rememberUser" id="rememberUser" name="saveUser">
-            <p class="textRemeber">Remember</p>
-        </div>
-
-        <div class="hideLoginForm__inputWrap hideLoginForm__notPadding">
-        <button type="button" id="hideLoginForm__button" class="hideLoginForm__button">Come</button>
-        </div>
-
     </div>
-</div>
 
 
 </body>

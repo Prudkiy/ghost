@@ -17,6 +17,11 @@ $( document ).ready(function() {
     });
 
 // model window generation - input
+/*
+    function clearDataModalWindow () {
+        $('.modalWindow__content').html('');
+        $('.modalWindow__title').html('');
+    }
 
     function generationWindow (data) {
         let htmlWindow = $('.modalWindow__content');
@@ -26,16 +31,17 @@ $( document ).ready(function() {
             htmlWindow.append(content.html());
         }
         
-    }
+    }*/
 
     
 
-    generationWindow ('hideLoginForm');
+    
 
     let eyeStatus = false;
     let eyeHtml = $('#hideLoginForm__eyeStatus');
     let passwordUser = $('input[name=passwordUser]');
     eyeHtml.click(function(){
+        
         if(!eyeStatus) {
             eyeHtml.attr('class', 'hideLoginForm__eyeStatusTrue');
             passwordUser.attr('type', 'text');
@@ -46,8 +52,9 @@ $( document ).ready(function() {
             passwordUser.attr('type', 'password');
             eyeStatus = false;
         }
-    })
-
+    });
+    
+  //  generationWindow ('hideLoginForm');
     // checkbox
 
     let rememberUser = $('#rememberUser');
@@ -55,6 +62,7 @@ $( document ).ready(function() {
     
 
     $('label[for=rememberUser] ').click(function(){
+        
          if(!rememberUser.prop('checked')){
             rememberUserImg.css('display','block')
          }
@@ -99,14 +107,26 @@ $( document ).ready(function() {
 
     }
 
+    
+
+
+
     function displayNoneBlock () {
         document.querySelector('.modalWindow').style.display = 'none';
+    
+    }
+
+    function openModalWindowLogin () {
+        document.querySelector('.modalWindow').style.display = 'flex';
+        
     }
 
     let checkDataForm = checkDataFormFun();
     document.getElementById('hideLoginForm__button').onclick = checkDataForm;
 
     document.querySelector('.modalWindow__close').addEventListener ( 'click', displayNoneBlock );
+
+    document.querySelector('#formLoginButton').addEventListener ( 'click', openModalWindowLogin );
 
 
     
