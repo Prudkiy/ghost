@@ -67,10 +67,11 @@ $( document ).ready(function() {
 
     function checkDataFormFun(){
 
-        const regEmail = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        const regName = /^[A-Za-zА-Яа-я _]*[A-Za-zА-Яа-я][A-Za-zА-Яа-я _]*$/;
-        let hideLoginForm__nameUser = document.getElementById('hideLoginForm__nameUser');
-        let hideLoginForm__passwordUser = document.getElementById('hideLoginForm__passwordUser');
+        const regName = /^[A-Za-z _]*$/;
+        let idName = 'hideLoginForm__nameUser';
+        let idPass = 'hideLoginForm__passwordUser';
+        let hideLoginForm__nameUser = document.getElementById(idName);
+        let hideLoginForm__passwordUser = document.getElementById(idPass);
 
         return (typeData) => {
 
@@ -78,29 +79,34 @@ $( document ).ready(function() {
 
             const inputOk = function (input) { // если поле ввода катит
                 if (formComplies) formComplies = true;
-                input.removeAttribute("class", borderRed);
+                let blockInfoError = document.querySelector('.' + input);
+                blockInfoError.style.display = 'none';
             };
             const inputNok = function (input) { // если поле ввода не катит
                 formComplies = false;
-                input.setAttribute("class", borderRed);
+                let blockInfoError = document.querySelector('.' + input);
+                blockInfoError.style.display = 'block';
             };
-
-            if (!regName.test(name.value)) inputNok(name); // проверяем поле name
-            else inputOk(name);
-            if (!regEmail.test(email.value)) inputNok(email); // проверяем поле email
-            else inputOk(email);
-            if (regNum.test(count.value) && count.value >= 10) inputNok(count); // проверяем поле count
-            else inputOk(count);
+            if (!regName.test(hideLoginForm__nameUser.value) || hideLoginForm__nameUser.value == '') inputNok(idName); 
+            else inputOk(idName);
+            if (!regName.test(hideLoginForm__passwordUser.value) || hideLoginForm__passwordUser.value == '') inputNok(idPass); 
+            else inputOk(idPass);
 
             if (formComplies) {
-                
-            }; // если все гуд, отправляем форму
+                console.log(formComplies)
+            }; 
         }
 
     }
 
+    function displayNoneBlock () {
+        document.querySelector('.modalWindow').style.display = 'none';
+    }
+
     let checkDataForm = checkDataFormFun();
-    checkDataForm();
+    document.getElementById('hideLoginForm__button').onclick = checkDataForm;
+
+    document.querySelector('.modalWindow__close').addEventListener ( 'click', displayNoneBlock );
 
 
     
