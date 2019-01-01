@@ -1,101 +1,126 @@
 
-
 $( document ).ready(function() {
 
+    let lastModelWindow = '';
 
-    let eyeStatus = false;
-    let eyeHtml = $('#hideLoginForm__eyeStatus');
-    let passwordUser = $('input[name=passwordUser]');
-    eyeHtml.click(function(){
+    function ModalWindowLogin () { // создаем окно для авторизации
+
+        lastModelWindow = 'loginWindow';
         
-        if(!eyeStatus) {
-            eyeHtml.attr('class', 'hideLoginForm__eyeStatusTrue');
-            passwordUser.attr('type', 'text');
-            eyeStatus = true;
-        }
-        else {
-            eyeHtml.attr('class', 'hideLoginForm__eyeStatusFalse');
-            passwordUser.attr('type', 'password');
-            eyeStatus = false;
-        }
-    });
-    
-  //  generationWindow ('hideLoginForm');
-    // checkbox
+                $('#modalWindow__thisContent').html($('#loginForm').html()); // поместить контент в обложку
+                $('.modalWindow__title').html($('#hideLoginForm').attr('name'));
 
-    let rememberUser = $('#rememberUser');
-    let rememberUserImg = $('label[for=rememberUser] img');
-    
+                let rememberUser = $('label[for=rememberUser] img');
+                let statusRemember = false;
+                const regName = /^[A-Za-z0-9 _]*[A-Za-z0-9][A-Za-z0-9 _]*$/;
+                let formComplies = true;
+                let name = $('#hideLoginForm__nameUser');
+                let password = $('#hideLoginForm__passwordUser');
 
-    $('label[for=rememberUser] ').click(function(){
+                $('.modalWindow').css('display', 'flex');
+
+                $('label[for=rememberUser]').click(()=>{ // клик по чекбоску
+                    if(!statusRemember) {
+                        rememberUser.css('display', 'block');
+                        statusRemember = true;
+                    }
+                    else {
+                        rememberUser.css('display', 'none');
+                        statusRemember = false;
+                    }
+                    
+                })
+
+                $('#hideLoginForm__button').click(()=>{ // проверяем данные перед отправкой
+                    
+
+                    const inputOk = function (input) { // если поле ввода катит
+                    if (formComplies) formComplies = true;
+                    $(input).css('display', 'none')
+                    };
+                    const inputNok = function (input) { // если поле ввода не катит
+                    formComplies = false;
+                    $(input).css('display', 'block')
+                    };
         
-         if(!rememberUser.prop('checked')){
-            rememberUserImg.css('display','block')
-         }
-         else {
-            rememberUserImg.css('display','none')
-        }
-    });
-
-    // data checking input
-
-    function checkDataFormFun(){
-
-        const regName = /^[A-Za-z _]*$/;
-        let idName = 'hideLoginForm__nameUser';
-        let idPass = 'hideLoginForm__passwordUser';
-        let hideLoginForm__nameUser = document.getElementById(idName);
-        let hideLoginForm__passwordUser = document.getElementById(idPass);
-
-        return (typeData) => {
-
-            let formComplies = true;
-
-            const inputOk = function (input) { // если поле ввода катит
-                if (formComplies) formComplies = true;
-                let blockInfoError = document.querySelector('.' + input);
-                blockInfoError.style.display = 'none';
-            };
-            const inputNok = function (input) { // если поле ввода не катит
-                formComplies = false;
-                let blockInfoError = document.querySelector('.' + input);
-                blockInfoError.style.display = 'block';
-            };
-            if (!regName.test(hideLoginForm__nameUser.value) || hideLoginForm__nameUser.value == '') inputNok(idName); 
-            else inputOk(idName);
-            if (!regName.test(hideLoginForm__passwordUser.value) || hideLoginForm__passwordUser.value == '') inputNok(idPass); 
-            else inputOk(idPass);
-
-            if (formComplies) {
-                console.log(formComplies)
-            }; 
-        }
+                    if (!regName.test(name.val())) inputNok('.hideLoginForm__nameUser'); // проверяем поле name
+                    else inputOk('.hideLoginForm__nameUser');
+                    if (!regName.test(password.val())) inputNok('.hideLoginForm__passwordUser'); // проверяем поле password
+                    else inputOk('.hideLoginForm__passwordUser');
+        
+                    if (formComplies) { // если все гуд, отправляем форму
+                        
+                    } 
+                })
+        
 
     }
 
-    
+    function ModalWindowRegistration () { // создаем окно для регистрации
+        lastModelWindow = 'RegistrationWindow';
+                $('#modalWindow__thisContent').html($('#registrationForm').html()); // поместить контент в обложку
+                $('.modalWindow__title').html($('#hideRegForm').attr('name'));
 
+                let name = $('#nameRegistration');
+                let email = $('#emailRegistration');
+                let password = $('#passRegistration');
+                let passwordDuble = $('#passRegistrationDuble');
+                let submitBut = $('#buttonRegistration');
+                formComplies = true;
+                const regEmail = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                const regName = /^[A-Za-z0-9 _]*[A-Za-z0-9][A-Za-z0-9 _]*$/;
 
+                $('.modalWindow').css('display', 'flex');
 
-    function displayNoneBlock () {
-        document.querySelector('.modalWindow').style.display = 'none';
-    
-    }
+                submitBut.click(()=>{ // проверяем данные перед отправкой
+                    
 
-    function openModalWindowLogin () {
-        document.querySelector('.modalWindow').style.display = 'flex';
+                    const inputOk = function (input) { // если поле ввода катит
+                        if (formComplies) formComplies = true;
+                        $(input).css('display', 'none');
+                    };
+                    const inputNok = function (input) { // если поле ввода не катит
+                        formComplies = false;
+                        $(input).css('display', 'block');
+                    };
         
+                    if (!regName.test(name.val())) inputNok('.nameRegistration'); // проверяем поле name
+                    else inputOk('.nameRegistration');
+                    if (!regEmail.test(email.val())) inputNok('.emailRegistration'); // проверяем поле email
+                    else inputOk('.emailRegistration');
+                    if (!regName.test(password.val())) inputNok('.passRegistration'); // проверяем поле password
+                    else inputOk('.passRegistration');
+                    if (password.val() !== passwordDuble.val() || !regName.test(password.val())) inputNok('.passRegistrationDuble'); // проверяем поле password duble
+                    else inputOk('.passRegistrationDuble');
+        
+                    if (formComplies) { // если все гуд, отправляем форму
+                        
+                    } 
+                })
+
     }
 
-    let checkDataForm = checkDataFormFun();
-    document.getElementById('hideLoginForm__button').onclick = checkDataForm;
 
-    document.querySelector('.modalWindow__close').addEventListener ( 'click', displayNoneBlock );
+    $('#formLoginButton').click(ModalWindowLogin); // окрыть окно авторизации
+    $('#formRegistrationButton').click(ModalWindowRegistration); // окрыть окно регистрации
 
-    document.querySelector('#formLoginButton').addEventListener ( 'click', openModalWindowLogin );
+    $('.modalWindow__close').click(()=>{ // закрыть модальное окно и очистить его
 
-
+        if (lastModelWindow === 'loginWindow') {
+            $('.hideLoginForm__blockInfoError').css('display', 'none');
+            $('label[for=rememberUser] img').css('display', 'none');
+        }
+        else if (lastModelWindow === 'RegistrationWindow') {
+            $('.hideLoginForm__blockInfoError').css('display', 'none');
+        }
     
+
+            $('#modalWindow__thisContent').html(''); 
+            $('.modalWindow__title').html('');
+
+            $('.modalWindow').css('display', 'none');
+    }); 
+
 
 });
 
