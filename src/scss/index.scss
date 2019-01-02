@@ -2,11 +2,12 @@
 @import "partials/mixins";
 @import "partials/media";
 @import url('https://fonts.googleapis.com/css?family=PT+Sans:400,700');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600');
 
 html, body {
     @include clear;
     font-family: 'PT Sans', sans-serif;
-    width: 100%
+    width: 100%;
 }
 
 h1, h2, h3, h4, h5, h6, p, a, ul, li, nav {
