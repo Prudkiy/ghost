@@ -1,0 +1,33 @@
+@import "partials/params";
+@import "partials/mixins";
+@import "partials/media";
+
+.pack {
+    width: 100%;
+    height: 380px;
+    background-image: url('../img/bg-pack.jpg');
+    &__wrap {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        margin-top: -280px;
+    }
+    &__block {
+        @include clear;
+        width: 255px;
+        height: 500px;
+        background-color: #ffffff;
+    }
+    &__plan1 {
+        border-top: 5px solid $colorYellowDark;
+    }
+    &__plan2 {
+        border-top: 5px solid $colorGray;
+    }
+    &__plan3 {
+        border-top: 5px solid $colorRedDark;
+    }
+    &__plan4 {
+        border-top: 5px solid $colorBlue;
+    }
+}

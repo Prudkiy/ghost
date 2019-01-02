@@ -106,6 +106,9 @@ $heightForm: 50px;
         display: flex;
         margin: 0 auto 100px auto;
         flex-wrap: wrap;
+        @include mobile {
+            display: none;
+        }
         &__cell {
             width: 25%;
             height: 80px;
