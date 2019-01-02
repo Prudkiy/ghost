@@ -7,7 +7,6 @@ $heightForm: 50px;
 .buy {
     background-color: #fff;
     padding-top: 90px;
-    min-height: 700px; ////////////////////// !!!!!!!!!!!
     h2 {
         font-size: 24px;
         color: $colorBgBlackHeadline;
@@ -103,39 +102,49 @@ $heightForm: 50px;
         }
     }
     &__table {
-        width: 100%;
+        width: 94%;
         display: flex;
+        margin: 0 auto 100px auto;
         flex-wrap: wrap;
         &__cell {
             width: 25%;
             height: 80px;
             box-sizing: border-box;
             position: relative;
-            border: 1px solid #ccc;
-            z-index: 10;
+            font-size: 14px;
+            color: $colorGrayDiscription;
             @include flex-center;
-        }
-        &__cell:after {
-        display: block;
-        position:absolute;
-        right: -9px;
-        bottom: -9px;
-        width: 16px;
-        height: 16px;
-        z-index: 100;
-        background-color: red;
-        content:"";
-        }
-        &__cell:before {
-            display: block;
-            position:absolute;
-            top: -9px;
-            right: -9px;
-            width: 16px;
-            height: 16px;
-            z-index: 100;
-            background-color: green;
-            content:"";
+            &:first-child {
+                &:after {
+                    display: none
+                }
             }
+            &:after {
+                display: block;
+                position:absolute;
+                left: -8px;
+                bottom: -8px;
+                width: 16px;
+                height: 16px;
+                z-index: 10;
+                background-color: #ffffff;
+                content:" ";
+                }
+        }
     }
+}
+
+$borderCell: 1px solid #cccccc;
+.border_r_b {
+    border-right: $borderCell;
+    border-bottom: $borderCell;
+}
+.border_b {
+    border-bottom: $borderCell;
+}
+.border_r {
+    border-right: $borderCell;
+}
+.border_l {
+    border-left: $borderCell;
 }

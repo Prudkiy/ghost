@@ -18,13 +18,6 @@ $('.buy__form__select ul li').click(function (event) {
     listSelectComStatus = false
 });
 
-let buy__table__cell__span = 100;
-$('.buy__table__cell:before').each(function(){
-    let el = $(this);
-    el.css('background-color', 'blue');
-    buy__table__cell__span++;
-    
-});
 
 
 
