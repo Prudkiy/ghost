@@ -2,32 +2,169 @@
 @import "partials/mixins";
 @import "partials/media";
 
+
+@keyframes blockPackTop {
+    from {box-shadow: 0 2px 6px #cccccc;}
+    to {box-shadow: 0 0 10px #ACACAC;}
+}
+
+.line {
+    width: 100%;
+    height: 1px;
+    border-top: 5px dashed $colorGrayDiscription;
+    margin-bottom: 100px;
+}
 .pack {
     width: 100%;
     height: 380px;
     background-image: url('../img/bg-pack.jpg');
+    @include mobile {
+        display: none;
+    }
     &__wrap {
         width: 100%;
         display: flex;
         justify-content: space-around;
         margin-top: -280px;
+        margin-bottom: 100px;
+        @include mobile {
+            flex-direction: column;
+            margin: 0px;
+        }
     }
     &__block {
         @include clear;
         width: 255px;
-        height: 500px;
         background-color: #ffffff;
+        box-shadow: 0 2px 6px #cccccc;
+        position: relative;
+        @include mobile {
+            width: 100%;
+        }
+        &:hover {
+            animation: blockPackTop 600ms linear;
+            box-shadow: 0 0 10px #ACACAC;
+        }
+        img {
+            display: block;
+            margin: 35px auto 20px auto;
+        }
+    }
+    &__title {
+        color: $colorBgBlackHeadline;
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+    &__discrtiption {
+        margin: 20px auto 35px;
+        width: 84%;
+        display: flex;
+        flex-wrap: wrap;
+        border-top: 1px solid $colorLineBorderBuy;
+        border-bottom: 1px solid $colorLineBorderBuy;
+        p {
+            display: block;
+            width: 85%;
+            padding: 12px 0;
+            color: $colorGrayDiscription;
+            font-size: 16px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        span {
+            display: block;
+            width: 15%;
+            padding: 12px 0;
+            text-align: right;
+            font-size: 16px;
+        }
     }
     &__plan1 {
         border-top: 5px solid $colorYellowDark;
+        span {
+            color: $colorYellowDark;
+        }
+        .pack__priceWrap__price {
+            border-bottom: 5px solid $colorYellowDark;
+        }
     }
     &__plan2 {
         border-top: 5px solid $colorGray;
+        span {
+            color: $colorGray;
+        }
+        .pack__priceWrap__price {
+            border-bottom: 5px solid $colorGray;
+        }
     }
     &__plan3 {
         border-top: 5px solid $colorRedDark;
+        span {
+            color: $colorRedDark;
+        }
+        .pack__priceWrap__price {
+            border-bottom: 5px solid $colorRedDark;
+        }
     }
     &__plan4 {
-        border-top: 5px solid $colorBlue;
+        border-top: 5px solid $colorTorq;
+        span {
+            color: $colorTorq;
+        }
+        .pack__priceWrap__price {
+            border-bottom: 5px solid $colorTorq;
+        }
+    }
+    &__priceWrap {
+        text-align: center;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin-bottom: 25px;
+        a {
+            color: $colorBgBlackHeadline;
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+            background-color: $colorBgBlackHeadline;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 3px;
+            letter-spacing: 1px;
+            width: 140px;
+            height: 40px;
+            transition: all 0.2s;
+            box-shadow: 0 0 7px #444444;
+            &:hover {
+                background-color: $colorGreen;
+            }
+        }
+        &__price {
+            margin: 0 auto 12px;
+            display: inline-block;
+            text-align: center;
+            width: 100px;
+            span {
+                color: $colorBgBlackHeadline;
+                font-size: 27px;
+                font-weight: bold;
+                &:first-child {
+                    font-size: 16px;
+                    position: relative;
+                    top: -8px;
+                    left: -2px;
+                    font-weight: normal;
+                }
+                &:last-child {
+                    color: red;
+                    font-size: 14px;
+                    color: $colorGrayDiscription;
+                    font-weight: normal;
+                    padding-left: 2px;
+                }
+            }
+        }
     }
 }
