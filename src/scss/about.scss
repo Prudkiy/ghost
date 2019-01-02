@@ -1,0 +1,27 @@
+@import "partials/params";
+@import "partials/mixins";
+@import "partials/media";
+
+.about {
+    display: flex;
+    width: 100%;
+    padding-bottom: 110px;
+    &__left {
+        width: 45%;
+        h3 {
+            font-size: 35px;
+            color: $colorBgBlackHeadline;
+            margin-bottom: 26px;
+        }
+        p {
+            font-size: 18px;
+            text-align: justify;
+            font-weight: normal;
+            color: $colorGrayDiscription;
+            width: 410px;
+        }
+    }
+    &__right {
+        width: 55%;
+    }
+}
