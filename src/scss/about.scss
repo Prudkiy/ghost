@@ -6,22 +6,118 @@
     display: flex;
     width: 100%;
     padding-bottom: 110px;
+    @include mobile {
+        flex-direction: column;
+    }
     &__left {
         width: 45%;
+        border-right: 1px dashed $colorGrayDiscription;
+        @include mobile {
+            width: 100%;
+            border: none;
+            margin-bottom: 30px;
+        }
         h3 {
             font-size: 35px;
             color: $colorBgBlackHeadline;
             margin-bottom: 26px;
+            @include mobile {
+                text-align: center;
+            }
         }
         p {
-            font-size: 18px;
+            font-size: 16px;
+            line-height: 22px;
             text-align: justify;
-            font-weight: normal;
+            font-weight: 100;
+            font-family: Arial;
             color: $colorGrayDiscription;
             width: 410px;
+            @include mobile {
+                text-align: center;
+                width: 100%;
+            }
         }
     }
     &__right {
         width: 55%;
+        display: flex;
+        justify-content: space-around;
+        @include mobile {
+            width: 100%;
+            flex-direction: column;
+            justify-content: center;
+        }
+    }
+    &__block {
+        width: 130px;
+        text-align: center;
+        @include mobile {
+            width: 100%;
+            margin-bottom: 40px;
+        }
+        h4 {
+            font-size: 17px;
+            color: $colorBgBlackHeadline;
+            margin-top: 14px;
+            font-weight: bold;
+        }
+        h5 {
+            margin-top: 7px;
+            color: $colorGrayDiscription;
+            font-size: 15px;
+        }
+    }
+    &__photo {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto;
+        background-size: 100% 100%;
+        background-position: center center;
+        background-repeat: no-repeat;
+        border: 6px solid #E5E5E5;
+        border-radius: 50%;
+    }
+    &__photo1 {
+        background-image: url('../img/photo1.png');
+    }
+    &__photo2 {
+        background-image: url('../img/photo2.png');
+    }
+    &__photo3 {
+        background-image: url('../img/photo3.png');
+    }
+    &__social {
+        display: flex;
+        width: 80px;
+        margin: 16px auto 0;
+        justify-content: space-between;
+        div {
+            height: 13px;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            cursor: pointer;
+        }
+        &__facebook {
+            width: 8px;
+            background-image: url('../img/icon-facebook.png');
+            &:hover {
+                background-image: url('../img/facebook_hover.png');
+            }
+        }
+        &__twiter {
+            width: 15px;
+            background-image: url('../img/icon-twit.png');
+            &:hover {
+                background-image: url('../img/twiter_hover.png');
+            }
+        }
+        &__link {
+            width: 13px;
+            background-image: url('../img/icon-link.png');
+            &:hover {
+                background-image: url('../img/link_hover.png');
+            }
+        }
     }
 }
