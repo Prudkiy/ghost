@@ -7,63 +7,66 @@
     height: 190px;
     background-image: url('../img/bg-comment.jpg');
     margin-bottom: 95px;
-    display: flex;
-    align-items: center;
-    align-self: center;
-    position: relative;
+    @include mobile {
+        display: none;
+    }
     &__wraper {
-        display: flex;
-        width: 700px;
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
-        height: 50px;
-        font-weight: bold;
+        width: 750px;
     }
     &__text {
-        text-align: center;
-        font-size: 17px;
-        color: #ffffff;
-        line-height: 22px;
-        position: relative;
-        top: -10px;
+        height: 100px;
+        margin-top: 20px;
+        border-radius: 5px;
+        background-color: $colorBgBlackHeadlineRgba2;
+        overflow: hidden;
         p {
             display: none;
-            &:first-child {
-                display: block;
-            }
-        }
-    }
-    &__nameText {
-        color: #ffffff;
-        margin-top: 15px;
-        text-align: center;
-        p {
-            display: none;
+            color: $colorYellow;
+            padding: 10px;
+            line-height: 24px;
+            font-size: 17px;
+            font-weight: normal;
+            text-align: center;
             &:first-child {
                 display: block;
             }
         }
     }
     &__footer {
-        width: 100%;
-        position: absolute;
-        bottom: 20px;
         display: flex;
+        height: 20px;
+        margin-top: 27px;
         justify-content: center;
     }
+    &__nameText {
+        width: 200px;
+        p {
+            display: none;
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            position: relative;
+            top: 2px;
+            transition: all 0.5s;
+            &:first-child {
+                display: block;
+            }
+        }
+    }
     &__nav {
-        display: flex;
-        div {
-            width: 8px;
-            height: 8px;
+        width: 150px;
+        @include flex-center;
+        & > div {
+            width: 9px;
+            height: 9px;
+            border: 2px solid $colorYellow;
             border-radius: 50%;
-            border: 2px solid #ffffff;
-            margin: 18px 10px 0 10px;
+            margin: 0 5px;
             cursor: pointer;
         }
     }
     &__thisButtom {
-        background-color: #ffffff;
+        background-color: $colorTorq;
     }
 }
