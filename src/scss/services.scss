@@ -1,0 +1,40 @@
+@import "partials/params";
+@import "partials/mixins";
+@import "partials/media";
+
+.service {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 90px;
+    width: 100%;
+    @include mobile {
+        flex-direction: column;
+        margin-bottom: 0;
+    }
+    &__block {
+        width: 240px;
+        text-align: center;
+        @include mobile {
+            width: 100%;
+            padding: 20px 0;
+            border-top: 1px dashed $colorGrayDiscription;
+            &:first-child {
+                border: none;
+            }
+        }
+        img {
+            display: block;
+            margin: 0 auto 22px;
+        }
+        h2 {
+            font-size: 18px;
+            color: $colorGgBlackFooter;
+            margin-bottom: 12px;
+        }
+        h3 {
+            font-size: 16px;
+            color: $colorLinkFooter;
+            line-height: 24px;
+        }
+    }
+}
