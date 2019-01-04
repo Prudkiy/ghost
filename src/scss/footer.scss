@@ -1,0 +1,46 @@
+@import "partials/params";
+@import "partials/mixins";
+@import "partials/media";
+
+.footer {
+    &__wrap {
+
+    }
+    &__mainNav {
+        &__logo {
+
+        }
+        &__nav {
+                li {
+                    a {
+
+                    }
+                }
+            
+        }
+    }
+    &__bottom {
+
+    }
+    &__block {
+        &__text {
+
+        }
+        &__nav {
+            li {
+                a {
+
+                }
+            }
+        }
+        &__tel {
+
+        }
+        &__email {
+
+        }
+        &__adres {
+            
+        }
+    }
+}
