@@ -8,18 +8,22 @@ var gulp         = require('gulp'),
     gulpIf       = require('gulp-if'),
     cleanCss     = require('gulp-clean-css'),
     browserSync  = require('browser-sync').create();
+    
 
 var config = {
     path: {
         scss: './src/scss/**/*.scss',
-        html: './public/index.html'
+        html: './public/index.html',
+        js: './public/js/src/*.js'
     },
     output: {
         cssName: 'bundle.min.css',
+        jsName: 'main.min.js',
         path: './public',
-        pathCss: './public/css'
+        pathCss: './public/css',
+        pathJs: './public/js'
     },
-    isDevelop: true
+    isDevelop: false
 };
 
 gulp.task('scss', function() {
@@ -33,6 +37,12 @@ gulp.task('scss', function() {
         .pipe(gulp.dest(config.output.pathCss))
         .pipe(browserSync.stream())
 });
+
+gulp.task('scripts', function() {
+    return gulp.src(config.path.js) // путь к папке со скриптами
+     .pipe(concat(config.output.jsName)) // в какой файл объединить
+     .pipe(gulp.dest(config.output.pathJs))
+  });
 
 gulp.task('serve', function() {
     browserSync.init({
